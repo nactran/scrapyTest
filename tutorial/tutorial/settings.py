@@ -29,7 +29,7 @@ CONCURRENT_REQUESTS = 100
 # See also autothrottle settings and docs
 
 DOWNLOAD_TIMEOUT = 120
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -92,3 +92,6 @@ DOWNLOAD_TIMEOUT = 120
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 RETRY_ENABLED = 5
+DOWNLOADER_MIDDLEWARES = {	'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware':None,	'tutorial.middlewares.RotateUserAgentMiddleware':400,}
+
+#分配给每个类的整型值，确定了他们运行的顺序
